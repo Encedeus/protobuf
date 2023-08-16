@@ -1,0 +1,51 @@
+syntax = "proto3";
+
+option go_package = "./;protoapi";
+
+service Container {
+    rpc Create (ContainerCreateParams) returns (ContainerCreateResp);
+}
+
+message ContainerCreateParams {
+    string Name = 1;
+    ContainerConfig Config = 2;
+    ContainerHostConfig HostConfig = 3;
+}
+
+message ContainerCreateResp {
+    string ID = 1;
+    repeated string Warnings = 2;
+    Error Error = 3;
+}
+
+message Error {
+    string Message = 1;
+    int32 StatusCode = 2;
+}
+
+message ContainerConfig {
+    string Image = 1;
+    bool Tty = 2;
+    repeated string Env = 4;
+    repeated string Cmd = 3;
+    string WorkingDir = 5;
+    bool AttachStdin = 6;
+    bool AttachStdout = 7;
+    bool AttachStderr = 8;
+    repeated Port ExposedPorts = 9;
+}
+
+message ContainerHostConfig {
+    repeated string Binds = 1;
+    bool AutoRemove = 2;
+    RestartPolicy RestartPolicy = 3;
+}
+
+message Port {
+    string Value = 1;
+}
+
+message RestartPolicy {
+    string Name = 1;
+    int32 MaximumRetryCount = 2;
+}
