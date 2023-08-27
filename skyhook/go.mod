@@ -1,4 +1,4 @@
-module github.com/Encedeus/protobuf/panel
+module github.com/Encedeus/protobuf/skyhook
 
 go 1.21.0
 
