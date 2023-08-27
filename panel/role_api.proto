@@ -2,10 +2,10 @@ syntax = "proto3";
 
 package panel;
 
+option go_package = "./go;protoapi";
+
 import "common.proto";
 import "generic.proto";
-
-option go_package = "./go;protoapi";
 
 message RoleCreateRequest {
   string name = 1;

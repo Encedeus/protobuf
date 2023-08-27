@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-option go_package = "./;protoapi";
+option go_package = "./go;protoapi";
 
 message UUID {
   string value = 1;

@@ -7,7 +7,6 @@
 package protoapi
 
 import (
-	__ "./"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -26,7 +25,7 @@ type AccountAPIKeyCreateRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	UserId      *__.UUID `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	UserId      *UUID    `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
 	Description string   `protobuf:"bytes,2,opt,name=description,proto3" json:"description,omitempty"`
 	IpAddresses []string `protobuf:"bytes,3,rep,name=ip_addresses,json=ipAddresses,proto3" json:"ip_addresses,omitempty"`
 }
@@ -63,7 +62,7 @@ func (*AccountAPIKeyCreateRequest) Descriptor() ([]byte, []int) {
 	return file_api_key_api_proto_rawDescGZIP(), []int{0}
 }
 
-func (x *AccountAPIKeyCreateRequest) GetUserId() *__.UUID {
+func (x *AccountAPIKeyCreateRequest) GetUserId() *UUID {
 	if x != nil {
 		return x.UserId
 	}
@@ -136,7 +135,7 @@ type AccountAPIKeyDeleteRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Id *__.UUID `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Id *UUID `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 }
 
 func (x *AccountAPIKeyDeleteRequest) Reset() {
@@ -171,7 +170,7 @@ func (*AccountAPIKeyDeleteRequest) Descriptor() ([]byte, []int) {
 	return file_api_key_api_proto_rawDescGZIP(), []int{2}
 }
 
-func (x *AccountAPIKeyDeleteRequest) GetId() *__.UUID {
+func (x *AccountAPIKeyDeleteRequest) GetId() *UUID {
 	if x != nil {
 		return x.Id
 	}
@@ -221,7 +220,7 @@ type AccountAPIKeyFindOneRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Id *__.UUID `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Id *UUID `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 }
 
 func (x *AccountAPIKeyFindOneRequest) Reset() {
@@ -256,7 +255,7 @@ func (*AccountAPIKeyFindOneRequest) Descriptor() ([]byte, []int) {
 	return file_api_key_api_proto_rawDescGZIP(), []int{4}
 }
 
-func (x *AccountAPIKeyFindOneRequest) GetId() *__.UUID {
+func (x *AccountAPIKeyFindOneRequest) GetId() *UUID {
 	if x != nil {
 		return x.Id
 	}
@@ -315,7 +314,7 @@ type AccountAPIkeyFindManyByUserRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	UserId *__.UUID `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	UserId *UUID `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
 }
 
 func (x *AccountAPIkeyFindManyByUserRequest) Reset() {
@@ -350,7 +349,7 @@ func (*AccountAPIkeyFindManyByUserRequest) Descriptor() ([]byte, []int) {
 	return file_api_key_api_proto_rawDescGZIP(), []int{6}
 }
 
-func (x *AccountAPIkeyFindManyByUserRequest) GetUserId() *__.UUID {
+func (x *AccountAPIkeyFindManyByUserRequest) GetUserId() *UUID {
 	if x != nil {
 		return x.UserId
 	}
@@ -475,7 +474,7 @@ var file_api_key_api_proto_goTypes = []interface{}{
 	(*AccountAPIKeyFindOneResponse)(nil),       // 5: panel.AccountAPIKeyFindOneResponse
 	(*AccountAPIkeyFindManyByUserRequest)(nil), // 6: panel.AccountAPIkeyFindManyByUserRequest
 	(*AccountAPIkeyFindManyResponse)(nil),      // 7: panel.AccountAPIkeyFindManyResponse
-	(*__.UUID)(nil),                            // 8: UUID
+	(*UUID)(nil),                               // 8: UUID
 	(*AccountAPIKey)(nil),                      // 9: panel.AccountAPIKey
 }
 var file_api_key_api_proto_depIdxs = []int32{
@@ -498,6 +497,7 @@ func file_api_key_api_proto_init() {
 	if File_api_key_api_proto != nil {
 		return
 	}
+	file_generic_proto_init()
 	file_common_proto_init()
 	if !protoimpl.UnsafeEnabled {
 		file_api_key_api_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {

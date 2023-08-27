@@ -7,7 +7,6 @@
 package protoapi
 
 import (
-	__ "./"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -128,7 +127,7 @@ type RoleUpdateRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Id          *__.UUID `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Id          *UUID    `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	Name        string   `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
 	Permissions []string `protobuf:"bytes,3,rep,name=permissions,proto3" json:"permissions,omitempty"`
 }
@@ -165,7 +164,7 @@ func (*RoleUpdateRequest) Descriptor() ([]byte, []int) {
 	return file_role_api_proto_rawDescGZIP(), []int{2}
 }
 
-func (x *RoleUpdateRequest) GetId() *__.UUID {
+func (x *RoleUpdateRequest) GetId() *UUID {
 	if x != nil {
 		return x.Id
 	}
@@ -238,7 +237,7 @@ type RoleDeleteRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Id *__.UUID `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Id *UUID `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 }
 
 func (x *RoleDeleteRequest) Reset() {
@@ -273,7 +272,7 @@ func (*RoleDeleteRequest) Descriptor() ([]byte, []int) {
 	return file_role_api_proto_rawDescGZIP(), []int{4}
 }
 
-func (x *RoleDeleteRequest) GetId() *__.UUID {
+func (x *RoleDeleteRequest) GetId() *UUID {
 	if x != nil {
 		return x.Id
 	}
@@ -323,7 +322,7 @@ type RoleFindOneRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Id *__.UUID `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Id *UUID `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 }
 
 func (x *RoleFindOneRequest) Reset() {
@@ -358,7 +357,7 @@ func (*RoleFindOneRequest) Descriptor() ([]byte, []int) {
 	return file_role_api_proto_rawDescGZIP(), []int{6}
 }
 
-func (x *RoleFindOneRequest) GetId() *__.UUID {
+func (x *RoleFindOneRequest) GetId() *UUID {
 	if x != nil {
 		return x.Id
 	}
@@ -525,7 +524,7 @@ var file_role_api_proto_goTypes = []interface{}{
 	(*RoleFindOneResponse)(nil),  // 7: panel.RoleFindOneResponse
 	(*RoleFindManyResponse)(nil), // 8: panel.RoleFindManyResponse
 	(*Role)(nil),                 // 9: panel.Role
-	(*__.UUID)(nil),              // 10: UUID
+	(*UUID)(nil),                 // 10: UUID
 }
 var file_role_api_proto_depIdxs = []int32{
 	9,  // 0: panel.RoleCreateResponse.role:type_name -> panel.Role
@@ -548,6 +547,7 @@ func file_role_api_proto_init() {
 		return
 	}
 	file_common_proto_init()
+	file_generic_proto_init()
 	if !protoimpl.UnsafeEnabled {
 		file_role_api_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*RoleCreateRequest); i {

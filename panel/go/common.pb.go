@@ -7,7 +7,6 @@
 package protoapi
 
 import (
-	__ "./"
 	timestamp "github.com/golang/protobuf/ptypes/timestamp"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
@@ -76,14 +75,14 @@ type User struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Id        *__.UUID             `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Id        *UUID                `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	CreatedAt *timestamp.Timestamp `protobuf:"bytes,2,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
 	UpdatedAt *timestamp.Timestamp `protobuf:"bytes,3,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"`
 	DeletedAt *timestamp.Timestamp `protobuf:"bytes,4,opt,name=deleted_at,json=deletedAt,proto3" json:"deleted_at,omitempty"`
 	Email     string               `protobuf:"bytes,5,opt,name=email,proto3" json:"email,omitempty"`
 	Password  string               `protobuf:"bytes,6,opt,name=password,proto3" json:"password,omitempty"`
 	Name      string               `protobuf:"bytes,7,opt,name=name,proto3" json:"name,omitempty"`
-	RoleId    *__.UUID             `protobuf:"bytes,8,opt,name=role_id,json=roleId,proto3" json:"role_id,omitempty"`
+	RoleId    *UUID                `protobuf:"bytes,8,opt,name=role_id,json=roleId,proto3" json:"role_id,omitempty"`
 }
 
 func (x *User) Reset() {
@@ -118,7 +117,7 @@ func (*User) Descriptor() ([]byte, []int) {
 	return file_common_proto_rawDescGZIP(), []int{0}
 }
 
-func (x *User) GetId() *__.UUID {
+func (x *User) GetId() *UUID {
 	if x != nil {
 		return x.Id
 	}
@@ -167,7 +166,7 @@ func (x *User) GetName() string {
 	return ""
 }
 
-func (x *User) GetRoleId() *__.UUID {
+func (x *User) GetRoleId() *UUID {
 	if x != nil {
 		return x.RoleId
 	}
@@ -179,7 +178,7 @@ type Role struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Id          *__.UUID             `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Id          *UUID                `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	CreatedAt   *timestamp.Timestamp `protobuf:"bytes,2,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
 	UpdatedAt   *timestamp.Timestamp `protobuf:"bytes,3,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"`
 	DeletedAt   *timestamp.Timestamp `protobuf:"bytes,4,opt,name=deleted_at,json=deletedAt,proto3" json:"deleted_at,omitempty"`
@@ -219,7 +218,7 @@ func (*Role) Descriptor() ([]byte, []int) {
 	return file_common_proto_rawDescGZIP(), []int{1}
 }
 
-func (x *Role) GetId() *__.UUID {
+func (x *Role) GetId() *UUID {
 	if x != nil {
 		return x.Id
 	}
@@ -266,13 +265,13 @@ type AccountAPIKey struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Id          *__.UUID             `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Id          *UUID                `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	CreatedAt   *timestamp.Timestamp `protobuf:"bytes,2,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
 	UpdatedAt   *timestamp.Timestamp `protobuf:"bytes,3,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"`
 	Description string               `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
 	IpAddresses []string             `protobuf:"bytes,5,rep,name=ip_addresses,json=ipAddresses,proto3" json:"ip_addresses,omitempty"`
 	Key         string               `protobuf:"bytes,6,opt,name=key,proto3" json:"key,omitempty"`
-	UserId      *__.UUID             `protobuf:"bytes,7,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	UserId      *UUID                `protobuf:"bytes,7,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
 }
 
 func (x *AccountAPIKey) Reset() {
@@ -307,7 +306,7 @@ func (*AccountAPIKey) Descriptor() ([]byte, []int) {
 	return file_common_proto_rawDescGZIP(), []int{2}
 }
 
-func (x *AccountAPIKey) GetId() *__.UUID {
+func (x *AccountAPIKey) GetId() *UUID {
 	if x != nil {
 		return x.Id
 	}
@@ -349,7 +348,7 @@ func (x *AccountAPIKey) GetKey() string {
 	return ""
 }
 
-func (x *AccountAPIKey) GetUserId() *__.UUID {
+func (x *AccountAPIKey) GetUserId() *UUID {
 	if x != nil {
 		return x.UserId
 	}
@@ -361,7 +360,7 @@ type Token struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	UserId *__.UUID  `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	UserId *UUID     `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
 	Type   TokenType `protobuf:"varint,2,opt,name=type,proto3,enum=panel.TokenType" json:"type,omitempty"`
 }
 
@@ -397,7 +396,7 @@ func (*Token) Descriptor() ([]byte, []int) {
 	return file_common_proto_rawDescGZIP(), []int{3}
 }
 
-func (x *Token) GetUserId() *__.UUID {
+func (x *Token) GetUserId() *UUID {
 	if x != nil {
 		return x.UserId
 	}
@@ -679,7 +678,7 @@ var file_common_proto_goTypes = []interface{}{
 	(*AccessToken)(nil),         // 5: panel.AccessToken
 	(*RefreshToken)(nil),        // 6: panel.RefreshToken
 	(*AccountAPIKeyToken)(nil),  // 7: panel.AccountAPIKeyToken
-	(*__.UUID)(nil),             // 8: UUID
+	(*UUID)(nil),                // 8: UUID
 	(*timestamp.Timestamp)(nil), // 9: google.protobuf.Timestamp
 }
 var file_common_proto_depIdxs = []int32{
@@ -713,6 +712,7 @@ func file_common_proto_init() {
 	if File_common_proto != nil {
 		return
 	}
+	file_generic_proto_init()
 	if !protoimpl.UnsafeEnabled {
 		file_common_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*User); i {

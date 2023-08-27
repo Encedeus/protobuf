@@ -7,7 +7,6 @@
 package protoapi
 
 import (
-	__ "./"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -28,11 +27,11 @@ type UserCreateRequest struct {
 	unknownFields protoimpl.UnknownFields
 
 	// required
-	Name     string   `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
-	Email    string   `protobuf:"bytes,2,opt,name=email,proto3" json:"email,omitempty"`
-	Password string   `protobuf:"bytes,3,opt,name=password,proto3" json:"password,omitempty"`
-	RoleId   *__.UUID `protobuf:"bytes,4,opt,name=role_id,json=roleId,proto3" json:"role_id,omitempty"`
-	RoleName string   `protobuf:"bytes,5,opt,name=role_name,json=roleName,proto3" json:"role_name,omitempty"`
+	Name     string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
+	Email    string `protobuf:"bytes,2,opt,name=email,proto3" json:"email,omitempty"`
+	Password string `protobuf:"bytes,3,opt,name=password,proto3" json:"password,omitempty"`
+	RoleId   *UUID  `protobuf:"bytes,4,opt,name=role_id,json=roleId,proto3" json:"role_id,omitempty"`
+	RoleName string `protobuf:"bytes,5,opt,name=role_name,json=roleName,proto3" json:"role_name,omitempty"`
 }
 
 func (x *UserCreateRequest) Reset() {
@@ -88,7 +87,7 @@ func (x *UserCreateRequest) GetPassword() string {
 	return ""
 }
 
-func (x *UserCreateRequest) GetRoleId() *__.UUID {
+func (x *UserCreateRequest) GetRoleId() *UUID {
 	if x != nil {
 		return x.RoleId
 	}
@@ -154,12 +153,12 @@ type UserUpdateRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	UserId   *__.UUID `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
-	Name     string   `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Email    string   `protobuf:"bytes,3,opt,name=email,proto3" json:"email,omitempty"`
-	Password string   `protobuf:"bytes,4,opt,name=password,proto3" json:"password,omitempty"`
-	RoleId   *__.UUID `protobuf:"bytes,5,opt,name=role_id,json=roleId,proto3" json:"role_id,omitempty"`
-	RoleName string   `protobuf:"bytes,6,opt,name=role_name,json=roleName,proto3" json:"role_name,omitempty"`
+	UserId   *UUID  `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	Name     string `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Email    string `protobuf:"bytes,3,opt,name=email,proto3" json:"email,omitempty"`
+	Password string `protobuf:"bytes,4,opt,name=password,proto3" json:"password,omitempty"`
+	RoleId   *UUID  `protobuf:"bytes,5,opt,name=role_id,json=roleId,proto3" json:"role_id,omitempty"`
+	RoleName string `protobuf:"bytes,6,opt,name=role_name,json=roleName,proto3" json:"role_name,omitempty"`
 }
 
 func (x *UserUpdateRequest) Reset() {
@@ -194,7 +193,7 @@ func (*UserUpdateRequest) Descriptor() ([]byte, []int) {
 	return file_user_api_proto_rawDescGZIP(), []int{2}
 }
 
-func (x *UserUpdateRequest) GetUserId() *__.UUID {
+func (x *UserUpdateRequest) GetUserId() *UUID {
 	if x != nil {
 		return x.UserId
 	}
@@ -222,7 +221,7 @@ func (x *UserUpdateRequest) GetPassword() string {
 	return ""
 }
 
-func (x *UserUpdateRequest) GetRoleId() *__.UUID {
+func (x *UserUpdateRequest) GetRoleId() *UUID {
 	if x != nil {
 		return x.RoleId
 	}
@@ -288,7 +287,7 @@ type UserDeleteRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	UserId *__.UUID `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	UserId *UUID `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
 }
 
 func (x *UserDeleteRequest) Reset() {
@@ -323,7 +322,7 @@ func (*UserDeleteRequest) Descriptor() ([]byte, []int) {
 	return file_user_api_proto_rawDescGZIP(), []int{4}
 }
 
-func (x *UserDeleteRequest) GetUserId() *__.UUID {
+func (x *UserDeleteRequest) GetUserId() *UUID {
 	if x != nil {
 		return x.UserId
 	}
@@ -373,7 +372,7 @@ type UserFindOneRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	UserId *__.UUID `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	UserId *UUID `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
 }
 
 func (x *UserFindOneRequest) Reset() {
@@ -408,7 +407,7 @@ func (*UserFindOneRequest) Descriptor() ([]byte, []int) {
 	return file_user_api_proto_rawDescGZIP(), []int{6}
 }
 
-func (x *UserFindOneRequest) GetUserId() *__.UUID {
+func (x *UserFindOneRequest) GetUserId() *UUID {
 	if x != nil {
 		return x.UserId
 	}
@@ -586,7 +585,7 @@ var file_user_api_proto_goTypes = []interface{}{
 	(*UserFindOneRequest)(nil),   // 6: panel.UserFindOneRequest
 	(*UserFindOneResponse)(nil),  // 7: panel.UserFindOneResponse
 	(*UserFindManyResponse)(nil), // 8: panel.UserFindManyResponse
-	(*__.UUID)(nil),              // 9: UUID
+	(*UUID)(nil),                 // 9: UUID
 	(*User)(nil),                 // 10: panel.User
 }
 var file_user_api_proto_depIdxs = []int32{
@@ -611,6 +610,7 @@ func file_user_api_proto_init() {
 	if File_user_api_proto != nil {
 		return
 	}
+	file_generic_proto_init()
 	file_common_proto_init()
 	if !protoimpl.UnsafeEnabled {
 		file_user_api_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
