@@ -1,7 +1,5 @@
 syntax = "proto3";
 
-package panel;
-
 import "generic.proto";
 import "common.proto";
 

@@ -1,7 +1,5 @@
 syntax = "proto3";
 
-package panel;
-
 option go_package = "./go;protoapi";
 
 message UserSignInRequest {
