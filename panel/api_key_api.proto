@@ -1,0 +1,40 @@
+syntax = "proto3";
+
+package panel;
+
+import "generic.proto";
+import "common.proto";
+
+option go_package = "./go;protoapi";
+
+message AccountAPIKeyCreateRequest {
+  UUID user_id = 1;
+  string description = 2;
+  repeated string ip_addresses = 3;
+}
+
+message AccountAPIKeyCreateResponse {
+  AccountAPIKey account_api_key = 2;
+}
+
+message AccountAPIKeyDeleteRequest {
+  UUID id = 1;
+}
+
+message AccountAPIKeyDeleteResponse {}
+
+message AccountAPIKeyFindOneRequest {
+  UUID id = 1;
+}
+
+message AccountAPIKeyFindOneResponse {
+  AccountAPIKey account_api_key = 2;
+}
+
+message AccountAPIkeyFindManyByUserRequest {
+  UUID user_id = 1;
+}
+
+message AccountAPIkeyFindManyResponse {
+  repeated AccountAPIKey account_api_keys = 2;
+}

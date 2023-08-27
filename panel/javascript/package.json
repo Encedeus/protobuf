@@ -1,0 +1,14 @@
+{
+  "name": "@encedeus/protobuf",
+  "version": "0.1.0-alpha",
+  "description": "Generated JavaScript source code for Encedeus protobuf definitions",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Encedeus/protobuf"
+  },
+  "author": "Encedeus",
+  "license": "MIT"
+}

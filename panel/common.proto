@@ -1,0 +1,63 @@
+syntax = "proto3";
+
+package panel;
+
+import "generic.proto";
+import "google/protobuf/timestamp.proto";
+
+option go_package = "./go;protoapi";
+
+message User {
+  UUID id = 1;
+  google.protobuf.Timestamp created_at = 2;
+  google.protobuf.Timestamp updated_at = 3;
+  google.protobuf.Timestamp deleted_at = 4;
+  string email = 5;
+  string password = 6;
+  string name = 7;
+  UUID role_id = 8;
+}
+
+message Role {
+  UUID id = 1;
+  google.protobuf.Timestamp created_at = 2;
+  google.protobuf.Timestamp updated_at = 3;
+  google.protobuf.Timestamp deleted_at = 4;
+  string name = 5;
+  repeated string permissions = 6;
+}
+
+message AccountAPIKey {
+  UUID id = 1;
+  google.protobuf.Timestamp created_at = 2;
+  google.protobuf.Timestamp updated_at = 3;
+  string description = 4;
+  repeated string ip_addresses = 5;
+  string key = 6;
+  UUID user_id = 7;
+}
+
+enum TokenType {
+  ACCESS_TOKEN = 0;
+  REFRESH_TOKEN = 1;
+  ACCOUNT_API_KEY = 2;
+}
+
+message Token {
+  UUID user_id = 1;
+  TokenType type = 2;
+}
+
+message AccessToken {
+  Token token = 1;
+}
+
+message RefreshToken {
+  Token token = 1;
+}
+
+message AccountAPIKeyToken {
+  Token token = 1;
+  repeated string ip_addresses = 2;
+  string description = 3;
+}

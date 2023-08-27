@@ -1,0 +1,53 @@
+syntax = "proto3";
+
+package panel;
+
+import "generic.proto";
+import "common.proto";
+
+option go_package = "./go;protoapi";
+
+// request object for the `/users` endpoint
+message UserCreateRequest {
+  // required
+  string name = 1;
+  string email = 2;
+  string password = 3;
+  UUID role_id = 4;
+  string role_name = 5;
+}
+
+message UserCreateResponse {
+  User user = 1;
+}
+
+message UserUpdateRequest {
+  UUID user_id = 1;
+  string name = 2;
+  string email = 3;
+  string password = 4;
+  UUID role_id = 5;
+  string role_name = 6;
+}
+
+message UserUpdateResponse {
+  User user = 1;
+}
+
+message UserDeleteRequest {
+  UUID user_id = 1;
+}
+
+message UserDeleteResponse {}
+
+message UserFindOneRequest {
+  UUID user_id = 1;
+}
+
+message UserFindOneResponse {
+  User user = 1;
+}
+
+message UserFindManyResponse {
+  repeated User users = 1;
+}

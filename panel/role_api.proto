@@ -1,0 +1,45 @@
+syntax = "proto3";
+
+package panel;
+
+import "common.proto";
+import "generic.proto";
+
+option go_package = "./go;protoapi";
+
+message RoleCreateRequest {
+  string name = 1;
+  repeated string permissions = 2;
+}
+
+message RoleCreateResponse {
+  Role role = 1;
+}
+
+message RoleUpdateRequest {
+  UUID id = 1;
+  string name = 2;
+  repeated string permissions = 3;
+}
+
+message RoleUpdateResponse {
+  Role role = 1;
+}
+
+message RoleDeleteRequest {
+  UUID id = 1;
+}
+
+message RoleDeleteResponse {}
+
+message RoleFindOneRequest {
+  UUID id = 1;
+}
+
+message RoleFindOneResponse {
+  Role role = 1;
+}
+
+message RoleFindManyResponse {
+  repeated Role roles = 1;
+}

@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package panel;
+
+option go_package = "./go;protoapi";
+
+message UserSignInRequest {
+  string uid = 1;
+  string password = 2;
+}
+
+message UserSignInResponse {
+  string access_token = 2;
+  string refresh_token = 3;
+}
