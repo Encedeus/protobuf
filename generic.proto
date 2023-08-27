@@ -5,3 +5,9 @@ option go_package = "./;protoapi";
 message UUID {
   string value = 1;
 }
+
+message HttpResponse {
+  int32 status_code = 1;
+  string message = 2;
+}
+
