@@ -12,7 +12,7 @@ message AccountAPIKeyCreateRequest {
 }
 
 message AccountAPIKeyCreateResponse {
-  AccountAPIKey account_api_key = 2;
+  AccountAPIKey account_api_key = 1;
 }
 
 message AccountAPIKeyDeleteRequest {
@@ -26,7 +26,7 @@ message AccountAPIKeyFindOneRequest {
 }
 
 message AccountAPIKeyFindOneResponse {
-  AccountAPIKey account_api_key = 2;
+  AccountAPIKey account_api_key = 1;
 }
 
 message AccountAPIKeyFindManyByUserRequest {
@@ -34,5 +34,5 @@ message AccountAPIKeyFindManyByUserRequest {
 }
 
 message AccountAPIKeyFindManyResponse {
-  repeated AccountAPIKey account_api_keys = 2;
+  repeated AccountAPIKey account_api_keys = 1;
 }

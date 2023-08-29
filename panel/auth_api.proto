@@ -8,6 +8,14 @@ message UserSignInRequest {
 }
 
 message UserSignInResponse {
-  string access_token = 2;
-  string refresh_token = 3;
+  string access_token = 1;
+  string refresh_token = 2;
+}
+
+message RefreshAccessTokenRequest {
+  string refresh_token = 1;
+}
+
+message RefreshAccessTokenResponse {
+  string access_token = 1;
 }
