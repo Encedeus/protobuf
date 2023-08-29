@@ -29,10 +29,10 @@ message AccountAPIKeyFindOneResponse {
   AccountAPIKey account_api_key = 2;
 }
 
-message AccountAPIkeyFindManyByUserRequest {
+message AccountAPIKeyFindManyByUserRequest {
   UUID user_id = 1;
 }
 
-message AccountAPIkeyFindManyResponse {
+message AccountAPIKeyFindManyResponse {
   repeated AccountAPIKey account_api_keys = 2;
 }
