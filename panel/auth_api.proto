@@ -12,10 +12,10 @@ message UserSignInResponse {
   string refresh_token = 2;
 }
 
-message RefreshAccessTokenRequest {
+message AccessTokenRefreshRequest {
   string refresh_token = 1;
 }
 
-message RefreshAccessTokenResponse {
+message AccessTokenRefreshResponse {
   string access_token = 1;
 }
