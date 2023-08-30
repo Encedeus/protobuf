@@ -49,3 +49,24 @@ message UserFindOneResponse {
 message UserFindManyResponse {
   repeated User users = 1;
 }
+
+message UserChangePasswordRequest {
+  string old_password = 1;
+  string new_password = 2;
+}
+
+message UserChangePasswordResponse {}
+
+message UserChangeUsernameRequest {
+  string old_username = 1;
+  string new_username = 2;
+}
+
+message UserChangeUsernameResponse {}
+
+message UserChangeEmailRequest {
+  string old_email = 1;
+  string new_email = 2;
+}
+
+message UserChangeEmailResponse {}
