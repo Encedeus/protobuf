@@ -52,24 +52,24 @@ message UserFindManyResponse {
 
 message UserChangePasswordRequest {
   UUID user_id = 1;
-  string old_password = 1;
-  string new_password = 2;
+  string old_password = 2;
+  string new_password = 3;
 }
 
 message UserChangePasswordResponse {}
 
 message UserChangeUsernameRequest {
   UUID user_id = 1;
-  string old_username = 1;
-  string new_username = 2;
+  string old_username = 2;
+  string new_username = 3;
 }
 
 message UserChangeUsernameResponse {}
 
 message UserChangeEmailRequest {
   UUID user_id = 1;
-  string old_email = 1;
-  string new_email = 2;
+  string old_email = 2;
+  string new_email = 3;
 }
 
 message UserChangeEmailResponse {}
