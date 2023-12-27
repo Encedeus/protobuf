@@ -59,3 +59,46 @@ message AccountAPIKeyToken {
   repeated string ip_addresses = 2;
   string description = 3;
 }
+
+message Module {
+  ModuleStore store = 1;
+  ModuleManifest manifest = 2;
+  Port backend_port = 3;
+  Port rpc_port = 4;
+  ModuleFrontendServer frontend_server = 5;
+}
+
+message ModuleStore {
+  string modules_folder_path = 1;
+  Port rpc_port = 2;
+}
+
+message ModuleManifest {
+  string name = 1;
+  repeated string authors = 2;
+  string version = 3;
+  ModuleManifestFrontend frontend = 4;
+  ModuleManifestBackend backend = 5;
+}
+
+message ModuleManifestFrontend {
+  string tab_name = 1;
+  ModulePlatform platform = 2;
+}
+
+message ModuleManifestBackend {
+  string main = 1;
+  repeated string registered_commands = 2;
+}
+
+message ModulePlatform {
+  string value = 1;
+}
+
+message ModuleFrontendServer {
+  ModulePlatform platform = 1;
+  string environment = 2;
+  string entry_point = 3;
+  string assets_path = 4;
+  Port port = 5;
+}

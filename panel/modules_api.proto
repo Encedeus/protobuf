@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+import "generic.proto";
+import "common.proto";
+
+option go_package = "./go;protoapi";
+
+message FindAllModulesRequest {
+  bool frontend_only = 1;
+  bool backend_only = 2;
+}
+
+message FindAllModulesResponse {
+  repeated Module modules = 1;
+}

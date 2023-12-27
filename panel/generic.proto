@@ -6,8 +6,11 @@ message UUID {
   string value = 1;
 }
 
+message Port {
+  uint32 value = 1;
+}
+
 message HttpResponse {
   int32 status_code = 1;
   string message = 2;
 }
-
