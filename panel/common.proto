@@ -83,7 +83,8 @@ message ModuleManifest {
 
 message ModuleManifestFrontend {
   string tab_name = 1;
-  ModulePlatform platform = 2;
+  string tab_icon_path = 2;
+  ModulePlatform platform = 3;
 }
 
 message ModuleManifestBackend {
