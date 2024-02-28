@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+import "generic.proto";
+import "common.proto";
+
+option go_package = "./go;protoapi";
+
+message ServersCreateRequest {
+  string name = 1;
+  string crater = 2;
+  string crater_variant = 3;
+  UUID owner = 4;
+  UUID node = 5;
+  uint64 ram = 6;
+  uint64 storage = 7;
+  uint32 logical_cores = 8;
+}
+
+message ServersCreateResponse {
+  repeated Server servers = 1;
+}
+
+message ServersFindAllRequest {}
+
+message ServersFindAllResponse {
+  repeated Server servers = 1;
+}
+
+message ServersFindOneRequest {
+  UUID id = 1;
+}
+
+message ServersFindOneResponse {
+  repeated Server servers = 1;
+}
+
+message ServersDeleteRequest {
+  UUID id = 1;
+}
+
+message ServersDeleteResponse {}

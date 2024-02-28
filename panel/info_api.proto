@@ -3,11 +3,12 @@ syntax = "proto3";
 import "common.proto";
 import "generic.proto";
 
-option go_package = "./skyhook;skyhook";
+option go_package = "./go;protoapi";
 
 service NodeInfo {
   rpc GetNodeHardwareInfo(HardwareInfoRequest) returns (HardwareInfoResponse);
   rpc GetFreePort(GetFreePortRequest) returns (GetFreePortResponse);
+  rpc CreateDirectory(CreateDirectoryRequest) returns (CreateDirectoryResponse);
 }
 
 message HardwareInfoRequest {}
@@ -29,3 +30,9 @@ message GetFreePortRequest {}
 message GetFreePortResponse {
   Port free_port = 1;
 }
+
+message CreateDirectoryRequest {
+  string path = 1;
+}
+
+message CreateDirectoryResponse {}

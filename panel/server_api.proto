@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+import "common.proto";
+import "generic.proto";
+
+option go_package = "./go;protoapi";

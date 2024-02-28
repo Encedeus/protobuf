@@ -3,7 +3,7 @@ syntax = "proto3";
 import "generic.proto";
 import "common.proto";
 
-option go_package = "./skyhook;skyhook";
+option go_package = "./go;protoapi";
 
 service Container {
     rpc Create (ContainerCreateParams) returns (ContainerCreateResp);

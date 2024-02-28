@@ -1,0 +1,50 @@
+syntax = "proto3";
+
+import "generic.proto";
+import "common.proto";
+
+option go_package = "./go;protoapi";
+
+message NodesCreateRequest {
+  string ipv4_address = 1;
+  string fqdn = 2;
+//  string skyhook_version = 3;
+  string os = 3;
+  string api_key = 4;
+//  SSHCredentials ssh_credentials = 11;
+/*  string cpu = 5;
+  uint32 cpu_base_clock = 6;
+  uint32 cores = 7;
+  uint32 logical_cores = 8;
+  uint32 ram = 9;
+  uint32 storage = 10;*/
+}
+
+/*message SSHCredentials {
+
+}*/
+
+
+message NodesCreateResponse {
+  repeated Node nodes = 1;
+}
+
+message NodesFindAllRequest {}
+
+message NodesFindAllResponse {
+  repeated Node nodes = 1;
+}
+
+message NodesFindOneRequest {
+  UUID id = 1;
+}
+
+message NodesFindOneResponse {
+  repeated Node nodes = 1;
+}
+
+message NodesDeleteRequest {
+  UUID id = 1;
+}
+
+message NodesDeleteResponse {}

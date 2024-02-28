@@ -145,7 +145,7 @@ message Crater {
 }
 
 message CraterVariant {
-  UUID name = 1;
+  string name = 1;
   string description = 2;
   string data_directory_path = 3;
 }

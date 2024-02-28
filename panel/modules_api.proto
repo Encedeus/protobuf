@@ -5,11 +5,19 @@ import "common.proto";
 
 option go_package = "./go;protoapi";
 
-message FindAllModulesRequest {
+message ModulesFindAllRequest {
   bool frontend_only = 1;
   bool backend_only = 2;
 }
 
-message FindAllModulesResponse {
+message ModulesFindAllResponse {
+  repeated Module modules = 1;
+}
+
+message ModulesFindOneRequest {
+  UUID id = 1;
+}
+
+message ModulesFindOneResponse {
   repeated Module modules = 1;
 }
