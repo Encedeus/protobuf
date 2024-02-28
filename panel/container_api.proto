@@ -1,0 +1,92 @@
+syntax = "proto3";
+
+import "generic.proto";
+import "common.proto";
+
+option go_package = "./skyhook;skyhook";
+
+service Container {
+    rpc Create (ContainerCreateParams) returns (ContainerCreateResp);
+    rpc Start (ContainerStartParams) returns (ContainerStartResp);
+    rpc Stop (ContainerStopParams) returns (ContainerStopResp);
+    rpc Restart (ContainerRestartParams) returns (ContainerRestartResp);
+}
+
+message ContainerCreateParams {
+    string Name = 1;
+    ContainerConfig Config = 2;
+}
+
+message ContainerCreateResp {
+    string ID = 1;
+    repeated string Warnings = 2;
+    Error Error = 3;
+}
+
+message ContainerStartParams {
+    string ID = 1;
+}
+
+message ContainerStartResp {
+    Error Error = 1;
+}
+
+message ContainerStopParams {
+    string ID = 1;
+}
+
+message ContainerStopResp {
+    Error Error = 1;
+}
+
+message ContainerRestartParams {
+    string ID = 1;
+}
+
+message ContainerRestartResp {
+    Error Error = 1;
+}
+
+message Error {
+    string Message = 1;
+    int32 StatusCode = 2;
+}
+
+message ContainerConfig {
+    string Image = 1;
+    bool Tty = 2;
+    repeated string Env = 4;
+    repeated string Cmd = 3;
+    string WorkingDir = 5;
+    bool AttachStdin = 6;
+    bool AttachStdout = 7;
+    bool AttachStderr = 8;
+    repeated DockerPort ExposedPorts = 9;
+    bool OpenStdin = 10;
+    repeated string Entrypoint = 11;
+    repeated ContainerVolumeMapping Volumes = 12;
+    ContainerHostConfig HostConfig = 13;
+}
+
+message ContainerVolumeMapping {
+    string DockerPath = 1;
+    string HostPath = 2;
+}
+
+message ContainerHostConfig {
+    int64 Memory = 1;
+    int64 Cpus = 2;
+    repeated string Binds = 3;
+    bool AutoRemove = 4;
+    RestartPolicy RestartPolicy = 5;
+}
+
+message DockerPort {
+    Port host_port = 1;
+    Port container_port = 2;
+}
+
+message RestartPolicy {
+    string Name = 1;
+    int32 MaximumRetryCount = 2;
+}

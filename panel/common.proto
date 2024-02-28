@@ -1,9 +1,9 @@
 syntax = "proto3";
 
-option go_package = "./go;protoapi";
-
 import "generic.proto";
 import "google/protobuf/timestamp.proto";
+
+option go_package = "./go;protoapi";
 
 message User {
   UUID id = 1;
@@ -102,4 +102,50 @@ message ModuleFrontendServer {
   string entry_point = 3;
   string assets_path = 4;
   Port port = 5;
+}
+
+message Node {
+  UUID id = 1;
+  google.protobuf.Timestamp created_at = 2;
+  google.protobuf.Timestamp updated_at = 3;
+  string ipv4_address = 4;
+  string fqdn = 5;
+  string skyhook_version = 6;
+  string os = 7;
+  string cpu = 8;
+  uint32 cpu_base_clock = 9;
+  uint32 cores = 10;
+  uint32 logical_cores = 11;
+  uint64 ram = 12;
+  uint64 storage = 13;
+  string skyhook_api_key = 14;
+}
+
+message Server {
+  UUID id = 1;
+  google.protobuf.Timestamp created_at = 2;
+  google.protobuf.Timestamp updated_at = 3;
+  string name = 4;
+  string containerId = 5;
+  Crater crater = 6;
+  CraterVariant variant = 7;
+  User owner = 8;
+  Node node = 9;
+  uint64 ram = 10;
+  uint64 storage = 11;
+  uint32 logical_cores = 12;
+  Port port = 13;
+}
+
+message Crater {
+  string name = 1;
+  string description = 2;
+  repeated CraterVariant variants = 3;
+  Module provider = 4;
+}
+
+message CraterVariant {
+  UUID name = 1;
+  string description = 2;
+  string data_directory_path = 3;
 }

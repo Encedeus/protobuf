@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+import "common.proto";
+import "generic.proto";
+
+option go_package = "./skyhook;skyhook";
+
+service NodeInfo {
+  rpc GetNodeHardwareInfo(HardwareInfoRequest) returns (HardwareInfoResponse);
+  rpc GetFreePort(GetFreePortRequest) returns (GetFreePortResponse);
+}
+
+message HardwareInfoRequest {}
+
+message HardwareInfoResponse {
+  string os = 1;
+  string cpu = 2;
+  uint32 cpu_clock_speed = 3;
+  uint32 cores = 4;
+  uint32 logical_cores = 5;
+  uint64 total_memory = 6;
+  uint64 total_disk = 7;
+  uint64 memory_usage = 8;
+  uint64 disk_usage = 9;
+}
+
+message GetFreePortRequest {}
+
+message GetFreePortResponse {
+  Port free_port = 1;
+}
