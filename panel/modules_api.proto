@@ -21,3 +21,7 @@ message ModulesFindOneRequest {
 message ModulesFindOneResponse {
   repeated Module modules = 1;
 }
+
+message ModuleInstallRequest {
+  UUID module_id = 1;
+}

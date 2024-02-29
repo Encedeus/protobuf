@@ -20,7 +20,10 @@ message ServersCreateResponse {
   repeated Server servers = 1;
 }
 
-message ServersFindAllRequest {}
+message ServersFindAllRequest {
+  bool backendOnly = 1;
+  bool frontendOnly = 2;
+}
 
 message ServersFindAllResponse {
   repeated Server servers = 1;
@@ -39,3 +42,7 @@ message ServersDeleteRequest {
 }
 
 message ServersDeleteResponse {}
+
+message ServersGetStatusResponse {
+  string status = 1;
+}
