@@ -50,6 +50,10 @@ message UserFindManyResponse {
   repeated User users = 1;
 }
 
+message UserFindWithRoleResponse {
+  repeated User users = 1;
+}
+
 message UserChangePasswordRequest {
   UUID user_id = 1;
   string old_password = 2;

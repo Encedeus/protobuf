@@ -38,6 +38,10 @@ message RoleFindOneResponse {
   Role role = 1;
 }
 
+message RoleFindAllResponse {
+  repeated Role roles = 1;
+}
+
 message RoleFindManyResponse {
   repeated Role roles = 1;
 }

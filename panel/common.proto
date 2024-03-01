@@ -135,7 +135,8 @@ message Server {
   string storage = 11;
   uint32 logical_cores = 12;
   Port port = 13;
-  string sftp_password = 14;
+  string ipv4 = 14;
+  string sftp_password = 15;
 }
 
 message Crater {
